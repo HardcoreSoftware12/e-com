@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon,  XMarkIcon,ShoppingCartIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const user = {
   name: 'Tom Cook',
@@ -62,15 +63,16 @@ function Navbar({children}){
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
+                      <Link
+                      to="/cart"
                         type="button"
                         className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">View notifications</span>
                         <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
-                      <span className="inline-flex items-center rounded-md mb-7 -ml-3 z-10 bg-transparent px-2 py-1 text-xs font-small text-red-600 ring-1 ring-inset ring-gray-500/10">
+                      </Link>
+                      <span className="inline-flex items-center rounded-2xl mb-7 -ml-3 z-10 bg-blue-500 text-xs font-small text-red-600 ring-1 ring-inset ring-gray-500/10 w-4 h-4 px-2 py-2">
         5
       </span>
 
@@ -154,14 +156,15 @@ function Navbar({children}){
                       <div className="text-base font-medium leading-none text-white">{user.name}</div>
                       <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
                     </div>
-                    <button
+                    <Link to="/cart"
                       type="button"
                       className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     >
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">View notifications</span>
                       <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                    </button> <span className="inline-flex items-center rounded-md mb-7 -ml-3 z-10 bg-transparent px-2 py-1 text-xs font-small text-red-600 ring-1 ring-inset ring-gray-500/10">
+                    </Link> 
+                      <span className="inline-flex items-center rounded-2xl mb-7 -ml-3 z-10 bg-blue-500 text-xs font-small text-red-600 ring-1 ring-inset ring-gray-500/10 w-4 h-4 px-2 py-2">
         5
       </span>
                   </div>
