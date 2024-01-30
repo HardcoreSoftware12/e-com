@@ -46,8 +46,7 @@ export default function Cart() {
   const dispatch = useDispatch();
   return (
     <>
-    
-    <div className="mt-20 w-[50%] mx-auto bg-white px-4 py-6 sm:px-6">
+    <div className=" mt-20 mx-auto bg-white px-2 py-6 sm:px-6 w-[90%] lg:w-[50%]">
     {/* <h1 className='text-center mb-10'>Checkout</h1> */}
     <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-10 text-center ">
               Cart
@@ -97,10 +96,7 @@ export default function Cart() {
         ))}
       </ul>
     </div>
-  </div>
-
-
-<div className=" border-gray-200 px-4 py-6 sm:px-6 w-[50%] mx-auto bg-white">
+    <div className=" border-gray-200 px-4 py-6 sm:px-6  mx-auto bg-white">
   <div className="flex justify-between text-base font-medium text-gray-900">
     <p>Subtotal</p>
     <p>$262.00</p>
@@ -114,20 +110,11 @@ export default function Cart() {
       Checkout
     </a>
   </div>
-  <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-    <p>
-      or{' '}
-      <Link to="/"
-        type="button"
-        className="font-medium text-indigo-600 hover:text-indigo-500"
-        onClick={() => setOpen(false)}
-      >
-        Continue Shopping
-        <span aria-hidden="true"> &rarr;</span>
-      </Link>
-    </p>
-  </div>
+  
 </div>
-</>
+  </div>
+    
+    
+  </>
   )
 }
