@@ -174,7 +174,7 @@ function Checkout() {
     <div className='lg:col-span-2'>
       
     <div className=" mx-auto bg-white px-2 py-6 sm:px-6">
-    {/* <h1 className='text-center mb-10'>Checkout</h1> */}
+    
     <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-10 text-center ">
               Cart
             </h1>
