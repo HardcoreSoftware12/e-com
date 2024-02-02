@@ -26,11 +26,30 @@ const products = [
   // More products...
 ]
 
+const address = [
+  {
+    name:"Joh Doe",
+    street:"High street",
+    city:"Banglore",
+    pinCode:"576224",
+    state:"Karnataka",
+    phone:"1234565413"
+  },
+  {
+    name:"Will Smith",
+    street:"Slap Town",
+    city:"Mumbai",
+    pinCode:"576224",
+    state:"Karnataka",
+    phone:"12348888883"
+  }
+]
+
 function Checkout() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-20">
     <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
-    <div className='lg:col-span-3 px-4 py-6 bg-white '>  
+    <div className='lg:col-span-3 px-4 py-6 bg-white mb-20'>  
 
      
     <form className='space-y-3'>
@@ -126,7 +145,36 @@ function Checkout() {
                 />
               </div>
             </div>
+            <div className='border-b border-gray-900/10 pb-12'>
+              <h2 className='text-base font-semibold leading-7 text-gray-900'>Address</h2>
+              <p className='mt-1 text-sm leading-6 text-gray-600'>Choose from existing address</p>
+              <ul role="list" className="divide-y divide-gray-100">
+      {address.map((address) => (
+        <li key={address.phone} className="flex justify-between gap-x-6 py-5 px-5 border-solid border-gray-200 border-2">
+          <div className="flex min-w-0 gap-x-4">
+          <input name='address'
+                    type="radio"
+                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                  />
 
+            <div className="min-w-0 flex-auto">
+              <p className="text-sm font-semibold leading-6 text-gray-900">{address.name}</p>
+              <p className="mt-1 truncate text-xs leading-5 text-gray-500">{address.street}</p>
+              <p className="mt-1 truncate text-xs leading-5 text-gray-500">{address.pinCode}</p>
+            </div>
+          </div>
+
+          <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+            <p className="text-sm leading-6 text-gray-900">{address.phone}</p>
+            <p className="text-sm leading-6 text-gray-900">{address.pinCode}</p>
+            </div>
+          
+        </li>
+      ))}
+    </ul>
+            </div>
+
+            <div className='mt-10 space-y-10'>
             <fieldset>
               <legend className="text-sm font-semibold leading-6 text-gray-900">Payment options</legend>
               <p className="mt-1 text-sm leading-6 text-gray-600">Choose one option</p>
@@ -134,38 +182,39 @@ function Checkout() {
                 <div className="flex items-center gap-x-3">
                   <input
                     id="cash"
-                    name="cash"
+                    name="payments"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                   />
-                  <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
+                  <label htmlFor="payments" className="block text-sm font-medium leading-6 text-gray-900">
                     cash
                   </label>
                 </div>
                 <div className="flex items-center gap-x-3">
                   <input
                     id="credit-card"
-                    name="credit-card"
+                    name="payments"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                   />
-                  <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
+                  <label htmlFor="payments" className="block text-sm font-medium leading-6 text-gray-900">
                     Credit Card
                   </label>
                 </div>
                 <div className="flex items-center gap-x-3">
                   <input
                     id="debit-crad"
-                    name="debit-crad"
+                    name="payments"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                   />
-                  <label htmlFor="push-nothing" className="block text-sm font-medium leading-6 text-gray-900">
+                  <label htmlFor="payments" className="block text-sm font-medium leading-6 text-gray-900">
                    Debit-card
                   </label>
                 </div>
               </div>
             </fieldset>
+            </div>
     </form>
     
     
@@ -206,6 +255,9 @@ function Checkout() {
                   <select name="" id="" className=''>
                     <option value="1">1</option>
                     <option value="2">2</option>
+                    <option value="2">3</option>
+                    <option value="2">4</option>
+                    <option value="2">5</option>
                   </select>
                 </div>
 
@@ -237,7 +289,7 @@ function Checkout() {
       href="#"
       className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
     >
-      Checkout
+      Click to Pay
     </a>
   </div>
   
